@@ -4,20 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neha S | Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #f4f6f8;
       color: #333;
     }
+
     header {
-      background-color: #004080;
+      background-color: #003366;
       color: white;
       padding: 2rem;
       text-align: center;
     }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 0.3rem 0;
+    }
+
+    .contact a {
+      color: #aee1f9;
+      text-decoration: none;
+    }
+
     section {
       padding: 2rem;
       max-width: 900px;
@@ -25,44 +43,51 @@
       background: white;
       margin-top: 1rem;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-    h1, h2 {
-      color: #004080;
+
+    h2 {
+      color: #003366;
+      margin-bottom: 1rem;
     }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     ul li::before {
       content: "✅ ";
+      margin-right: 0.5rem;
     }
-    .contact a {
-      color: #004080;
-      text-decoration: none;
-    }
-    .resume-button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-top: 1rem;
-      font-size: 16px;
-      background-color: #004080;
+
+    .resume-btn {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto 0;
+      padding: 0.75rem 1.5rem;
+      background-color: #003366;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-size: 1rem;
       text-decoration: none;
+      transition: background-color 0.3s ease;
     }
-    .resume-button:hover {
-      background-color: #003366;
+
+    .resume-btn:hover {
+      background-color: #0059b3;
     }
-    .links a {
-      color: #004080;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Neha S</h1>
@@ -105,17 +130,12 @@
     </ul>
   </section>
 
-  <section>
-    <h2>Resume</h2>
-    <a href="Neha S_Resume.pdf" class="resume-button" download>Download Resume</a>
+  <section style="text-align: center;">
+    <a class="resume-btn" href="Neha S_Resume.pdf" download>Download My Resume</a>
   </section>
 
-  <section>
-    <h2>Connect with Me</h2>
-    <p class="links">
-      <a href="https://www.linkedin.com/in/neha-s-28551326a" target="_blank">🔗 LinkedIn</a> |
-      <a href="https://github.com/NEHA-S07" target="_blank">💻 GitHub</a>
-    </p>
-  </section>
+  <footer>
+    &copy; 2025 Neha S. All rights reserved.
+  </footer>
 </body>
 </html>
