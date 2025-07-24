@@ -6,16 +6,35 @@
   <title>Neha S | Portfolio</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Aesthetic color palette */
     body {
+      background-color: #fdfdfd;
+      color: #2b2d42;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f6f8;
-      color: #333;
     }
 
     header {
-      background-color: #003366;
+      background-color: #2b2d42;
       color: white;
       padding: 2rem;
       text-align: center;
@@ -31,7 +50,7 @@
     }
 
     .contact a {
-      color: #aee1f9;
+      color: #8d99ae;
       text-decoration: none;
     }
 
@@ -39,20 +58,14 @@
       padding: 2rem;
       max-width: 900px;
       margin: auto;
-      background: white;
+      background: #ffffff;
       margin-top: 1rem;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    h2 {
-      color: #003366;
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      color: #004080;
-      margin-top: 1.5rem;
+    h2, h3 {
+      color: #2b2d42;
     }
 
     ul {
@@ -70,7 +83,7 @@
       width: fit-content;
       margin: 2rem auto 0;
       padding: 0.75rem 1.5rem;
-      background-color: #003366;
+      background-color: #ef8354;
       color: white;
       border: none;
       border-radius: 8px;
@@ -80,7 +93,7 @@
     }
 
     .resume-btn:hover {
-      background-color: #0059b3;
+      background-color: #d76b3f;
     }
 
     .project {
@@ -91,7 +104,22 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #8d99ae;
+    }
+
+    img[alt="Profile Picture"] {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin: 1rem auto;
+      display: block;
+      border: 3px solid white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img[alt="Profile Picture"]:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -99,19 +127,19 @@
 <body>
   <header>
     <h1>Neha S</h1>
-    <img src="Profile picture (1).png.png" alt="Profile Picture" style="width:130px;height:130px;border-radius:50%;margin:1rem auto;display:block;border:3px solid white;" />
+    <img src="Profile picture (1).png.png" alt="Profile Picture" />
     <p>VLSI Enthusiast | ECE @ Yenepoya Institute of Technology | Maven Silicon VLSI Trainee</p>
     <p>Bengaluru, Karnataka, India</p>
     <div class="contact">
       <p>Email: <a href="mailto:nehas04551@gmail.com">nehas04551@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/neha-s-28551326a" target="_blank">linkedin.com/in/neha-s-28551326a</a></p>
     </div>
-    <a href="https://www.linkedin.com/in/neha-s-28551326a" target="_blank" class="resume-btn" style="margin-top: 1rem;">
+    <a href="https://www.linkedin.com/in/neha-s-28551326a" target="_blank" class="resume-btn">
       🔗 Connect on LinkedIn
     </a>
   </header>
 
-  <section>
+  <section class="fade-in">
     <h2>About Me</h2>
     <p>I’m a Bachelor of Engineering student in Electronics and Communication at Yenepoya Institute of Technology.
       My interests revolve around VLSI design and embedded systems — where I enjoy solving real-world problems using core electronics.
@@ -119,23 +147,22 @@
     </p>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Summary</h2>
     <p>As a BE student in Electronics and Communication Engineering, I'm passionate about exploring the world of core electronics.
     My interests lie in VLSI design and embedded systems, where I enjoy applying theoretical concepts to real-world problems.
     I'm excited to connect with professionals in the field and learn from their experiences.</p>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Education</h2>
     <p><strong>Yenepoya Institute of Technology</strong><br />
     Bachelor of Engineering (B.E), Electronics & Communication Engineering<br />
     Oct 2022 – Apr 2026</p>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Experience</h2>
-
     <div class="project">
       <h3>Embedded Systems Intern – Plasmid (MSME)</h3>
       <p><em>February 2025 – April 2025</em></p>
@@ -157,7 +184,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Skills</h2>
     <ul>
       <li>Project Management</li>
@@ -170,7 +197,7 @@
     </ul>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Certifications</h2>
     <ul>
       <li>🏅 <strong>Postman API Fundamentals – Student Expert</strong><br>Certified by Postman</li>
@@ -182,7 +209,7 @@
     </ul>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Projects</h2>
     <div class="project">
       <h3>1. Alert System Using IoT</h3>
@@ -198,7 +225,7 @@
     </div>
   </section>
 
-  <section style="text-align: center;">
+  <section class="fade-in" style="text-align: center;">
     <a class="resume-btn" href="NehaS_Resume.pdf" download>Download My Resume</a>
   </section>
 
