@@ -6,7 +6,10 @@
   <title>Neha S | Portfolio</title>
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <!-- Metadata (No image = No LinkedIn thumbnail) -->
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Metadata -->
   <meta property="og:title" content="Neha S | VLSI | Embedded Systems Portfolio" />
   <meta property="og:description" content="Explore my work in VLSI, Embedded Systems, and Digital Design. ECE @ YIT | Maven Silicon VLSI Trainee." />
   <meta property="og:url" content="https://neha-s07.github.io/neha-s-portfolio/" />
@@ -33,8 +36,11 @@
       font-size: 2.5rem;
     }
 
-    header p {
-      margin: 0.3rem 0;
+    #typing-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+      min-height: 1.5rem;
     }
 
     .contact a {
@@ -45,9 +51,8 @@
     section {
       padding: 2rem;
       max-width: 900px;
-      margin: auto;
+      margin: 2rem auto;
       background: white;
-      margin-top: 1rem;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
@@ -73,25 +78,62 @@
     }
 
     .resume-btn {
-      display: block;
-      width: fit-content;
-      margin: 2rem auto 0;
+      display: inline-block;
       padding: 0.75rem 1.5rem;
-      background-color: #003366;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
       color: white;
-      border: none;
       border-radius: 8px;
-      font-size: 1rem;
+      font-weight: bold;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s ease;
     }
 
     .resume-btn:hover {
-      background-color: #0059b3;
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(0, 242, 254, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
     }
 
     .project {
       margin-bottom: 1.5rem;
+    }
+
+    .skill-bar {
+      margin-bottom: 1rem;
+    }
+
+    .bar-label {
+      font-weight: bold;
+    }
+
+    .bar-container {
+      background-color: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+      margin-top: 5px;
+    }
+
+    .bar-fill {
+      background-color: #4facfe;
+      height: 100%;
+      text-align: right;
+      padding-right: 8px;
+      color: white;
+      line-height: 20px;
+      animation: fillBar 2s ease-out forwards;
+      width: 0;
+    }
+
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--fill); }
     }
 
     footer {
@@ -106,7 +148,7 @@
 <body>
   <header>
     <h1>Neha S</h1>
-    <p>VLSI Enthusiast | ECE @ Yenepoya Institute of Technology | Maven Silicon VLSI Trainee</p>
+    <p id="typing-text"></p>
     <p>Bengaluru, Karnataka, India</p>
     <div class="contact">
       <p>Email: <a href="mailto:nehas04551@gmail.com">nehas04551@gmail.com</a></p>
@@ -114,7 +156,7 @@
     </div>
   </header>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>About Me</h2>
     <p>I’m a Bachelor of Engineering student in Electronics and Communication at Yenepoya Institute of Technology.
       My interests revolve around VLSI design and embedded systems — where I enjoy solving real-world problems using core electronics.
@@ -122,39 +164,46 @@
     </p>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Education</h2>
     <p><strong>Yenepoya Institute of Technology</strong><br />
     Bachelor of Engineering (B.E), Electronics & Communication Engineering<br />
     Oct 2022 – Apr 2026</p>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Skills</h2>
-    <ul>
-      <li>Project Management</li>
-      <li>Alert System Development</li>
-      <li>Internet of Things (IoT)</li>
-      <li>Sensory Integration</li>
-      <li>Printed Circuit Board (PCB) Design</li>
-      <li>Embedded Systems</li>
-      <li>C (Programming Language)</li>
-    </ul>
+    <div class="skill-bar">
+      <div class="bar-label">Embedded Systems</div>
+      <div class="bar-container"><div class="bar-fill" style="--fill: 90%;">90%</div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="bar-label">IoT Projects</div>
+      <div class="bar-container"><div class="bar-fill" style="--fill: 85%;">85%</div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="bar-label">PCB Design</div>
+      <div class="bar-container"><div class="bar-fill" style="--fill: 80%;">80%</div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="bar-label">Verilog</div>
+      <div class="bar-container"><div class="bar-fill" style="--fill: 75%;">75%</div></div>
+    </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Certifications</h2>
     <ul>
-      <li>🏅 <strong>Postman API Fundamentals – Student Expert</strong><br>Certified by Postman</li>
-      <li>📊 <strong>Mastering Data with Machine Learning Internship</strong><br>Issued: Nov 2024<br>By CSRBOX & IBM SkillsBuild</li>
-      <li>🔧 <strong>Embedded Systems Internship</strong><br>Feb 1 – Apr 1, 2025<br>By Plasmid (MSME DFO)</li>
-      <li>🌐 <strong>Embedded System Design & IoT Internship</strong><br>Jan 4 – Apr 4, 2024<br>By Pantech.ai (Warriors Way)</li>
-      <li>📜 <strong>Spoken Tutorial – IIT Bombay</strong><br>• Python 3.4.3 (87.14%) – Jul 26, 2024<br>• Arduino (92.50%) – Feb 21, 2024</li>
-      <li>🏆 <strong>Software Development Course – Beginner to Advanced</strong><br>Jan 2025 | Score: 95%<br>By Brilliant Students Organization</li>
+      <li><strong>Postman API Fundamentals – Student Expert</strong> – Postman</li>
+      <li><strong>Mastering Data with Machine Learning Internship</strong> – IBM SkillsBuild</li>
+      <li><strong>Embedded Systems Internship</strong> – Plasmid (MSME DFO)</li>
+      <li><strong>Embedded System Design & IoT Internship</strong> – Pantech.ai</li>
+      <li><strong>Spoken Tutorial – IIT Bombay</strong> – Python 3, Arduino</li>
+      <li><strong>Software Development Course</strong> – Brilliant Students Org</li>
     </ul>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Projects</h2>
     <div class="project">
       <h3>1. Alert System Using IoT</h3>
@@ -170,12 +219,30 @@
     </div>
   </section>
 
-  <section style="text-align: center;">
-    <a class="resume-btn" href="NehaS_Resume.pdf" download>Download My Resume</a>
+  <section style="text-align: center;" data-aos="zoom-in">
+    <a class="resume-btn" href="NehaS_Resume_2025.pdf" download>⬇ Download My Resume</a>
   </section>
 
   <footer>
     &copy; 2025 Neha S. All rights reserved.
   </footer>
+
+  <!-- Typing Text Script -->
+  <script>
+    const text = "VLSI Enthusiast | Embedded Systems Developer | ECE @ YIT";
+    let i = 0;
+    function typingEffect() {
+      if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 70);
+      }
+    }
+    typingEffect();
+  </script>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
