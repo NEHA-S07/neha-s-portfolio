@@ -10,21 +10,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Aesthetic color palette */
     body {
       background-color: #fdfdfd;
       color: #2b2d42;
@@ -33,6 +18,31 @@
       padding: 0;
     }
 
+    /* === Navbar === */
+    nav {
+      background-color: #2b2d42;
+      color: white;
+      padding: 0.8rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #ef8354;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* === Header === */
     header {
       background-color: #2b2d42;
       color: white;
@@ -121,10 +131,34 @@
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+  </nav>
+
+  <!-- Header -->
   <header>
     <h1>Neha S</h1>
     <img src="Profile picture (1).png.png" alt="Profile Picture" />
@@ -139,12 +173,11 @@
     </a>
   </header>
 
-  <section class="fade-in">
+  <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p>I’m a Bachelor of Engineering student in Electronics and Communication at Yenepoya Institute of Technology.
       My interests revolve around VLSI design and embedded systems — where I enjoy solving real-world problems using core electronics.
-      I'm passionate about learning, building, and connecting with professionals in the field.
-    </p>
+      I'm passionate about learning, building, and connecting with professionals in the field.</p>
   </section>
 
   <section class="fade-in">
@@ -154,14 +187,14 @@
     I'm excited to connect with professionals in the field and learn from their experiences.</p>
   </section>
 
-  <section class="fade-in">
+  <section id="education" class="fade-in">
     <h2>Education</h2>
     <p><strong>Yenepoya Institute of Technology</strong><br />
     Bachelor of Engineering (B.E), Electronics & Communication Engineering<br />
     Oct 2022 – Apr 2026</p>
   </section>
 
-  <section class="fade-in">
+  <section id="experience" class="fade-in">
     <h2>Experience</h2>
     <div class="project">
       <h3>Embedded Systems Intern – Plasmid (MSME)</h3>
@@ -172,7 +205,6 @@
         <li>Contributed to modular design for enhanced learning.</li>
       </ul>
     </div>
-
     <div class="project">
       <h3>Embedded IoT Intern – Pantech.AI</h3>
       <p><em>January 2024 – April 2024</em></p>
@@ -184,7 +216,7 @@
     </div>
   </section>
 
-  <section class="fade-in">
+  <section id="skills" class="fade-in">
     <h2>Skills</h2>
     <ul>
       <li>Project Management</li>
@@ -197,19 +229,7 @@
     </ul>
   </section>
 
-  <section class="fade-in">
-    <h2>Certifications</h2>
-    <ul>
-      <li>🏅 <strong>Postman API Fundamentals – Student Expert</strong><br>Certified by Postman</li>
-      <li>📊 <strong>Mastering Data with Machine Learning Internship</strong><br>Issued: Nov 2024<br>By CSRBOX & IBM SkillsBuild</li>
-      <li>🔧 <strong>Embedded Systems Internship</strong><br>Feb 1 – Apr 1, 2025<br>By Plasmid (MSME DFO)</li>
-      <li>🌐 <strong>Embedded System Design & IoT Internship</strong><br>Jan 4 – Apr 4, 2024<br>By Pantech.ai (Warriors Way)</li>
-      <li>📜 <strong>Spoken Tutorial – IIT Bombay</strong><br>• Python 3.4.3 (87.14%) – Jul 26, 2024<br>• Arduino (92.50%) – Feb 21, 2024</li>
-      <li>🏆 <strong>Software Development Course – Beginner to Advanced</strong><br>Jan 2025 | Score: 95%<br>By Brilliant Students Organization</li>
-    </ul>
-  </section>
-
-  <section class="fade-in">
+  <section id="projects" class="fade-in">
     <h2>Projects</h2>
     <div class="project">
       <h3>1. Alert System Using IoT</h3>
@@ -225,8 +245,8 @@
     </div>
   </section>
 
-  <section class="fade-in" style="text-align: center;">
-    <a class="resume-btn" href="NehaS_Resume.pdf" download>Download My Resume</a>
+  <section id="resume" class="fade-in" style="text-align: center;">
+    <a class="resume-btn" href="NehaS_Resume.pdf" download>📄 Download My Resume</a>
   </section>
 
   <footer>
