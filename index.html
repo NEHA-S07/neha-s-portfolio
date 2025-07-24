@@ -5,80 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neha S | Portfolio</title>
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
   <style>
-    :root {
-      --bg-color: #f4f6f8;
-      --text-color: #333;
-      --header-bg: #003366;
-      --header-text: #fff;
-      --section-bg: #ffffff;
-      --link-color: #aee1f9;
-      --accent: #4facfe;
-    }
-
-    body.dark-mode {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --header-bg: #1e1e2f;
-      --header-text: #ffffff;
-      --section-bg: #1c1c28;
-      --link-color: #7fc7ff;
-      --accent: #5dade2;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    nav {
-      background-color: var(--header-bg);
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    nav a {
-      color: var(--header-text);
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .toggle-btn {
-      background: transparent;
-      border: none;
-      font-size: 1.4rem;
-      color: var(--header-text);
-      cursor: pointer;
+      background-color: #f4f6f8;
+      color: #333;
     }
 
     header {
+      background-color: #003366;
+      color: white;
+      padding: 2rem;
       text-align: center;
-      padding: 2rem 1rem 1rem;
-      background-color: var(--header-bg);
-      color: var(--header-text);
     }
 
     header h1 {
@@ -86,33 +26,33 @@
       font-size: 2.5rem;
     }
 
-    #typing-text {
-      font-size: 1.2rem;
-      font-style: italic;
-      margin-bottom: 0.5rem;
-      min-height: 1.4rem;
+    header p {
+      margin: 0.3rem 0;
     }
 
     .contact a {
-      color: var(--link-color);
+      color: #aee1f9;
       text-decoration: none;
     }
 
     section {
       padding: 2rem;
       max-width: 900px;
-      margin: 2rem auto;
-      background: var(--section-bg);
+      margin: auto;
+      background: white;
+      margin-top: 1rem;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     h2 {
-      color: var(--header-bg);
+      color: #003366;
+      margin-bottom: 1rem;
     }
 
     h3 {
-      color: var(--accent);
+      color: #004080;
+      margin-top: 1.5rem;
     }
 
     ul {
@@ -121,96 +61,30 @@
     }
 
     ul li::before {
-      content: "\2714\fe0f ";
+      content: "✅ ";
       margin-right: 0.5rem;
     }
 
     .resume-btn {
-      display: inline-block;
+      display: block;
+      width: fit-content;
+      margin: 2rem auto 0;
       padding: 0.75rem 1.5rem;
-      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      background-color: #003366;
       color: white;
+      border: none;
       border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
       font-size: 1rem;
-      animation: pulse 2s infinite;
-      transition: transform 0.3s ease;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
 
     .resume-btn:hover {
-      transform: scale(1.05);
+      background-color: #0059b3;
     }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.6); }
-      70% { box-shadow: 0 0 0 12px rgba(0, 242, 254, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
-    }
-
-    .chat-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: var(--accent);
-      color: white;
-      padding: 12px 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      z-index: 999;
-    }
-
-    .chat-popup {
-      display: none;
-      position: fixed;
-      bottom: 90px;
-      right: 30px;
-      background: var(--section-bg);
-      border: 1px solid var(--accent);
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      z-index: 999;
-      width: 280px;
-    }
-
-    .chat-form h3 {
-      margin-top: 0;
-      color: var(--header-bg);
-    }
-
-    .chat-form input,
-    .chat-form textarea {
-      width: 100%;
-      padding: 8px;
-      margin: 6px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-    }
-
-    .chat-form button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .chat-form button[type="submit"] {
-      background-color: var(--accent);
-      color: white;
-    }
-
-    .chat-form .close-btn {
-      background-color: #ccc;
-      color: #333;
-      margin-top: 6px;
+    .project {
+      margin-bottom: 1.5rem;
     }
 
     footer {
@@ -221,21 +95,11 @@
     }
   </style>
 </head>
-<body>
-  <nav>
-    <div>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-    </div>
-    <button class="toggle-btn" id="theme-toggle" title="Toggle dark/light mode">🌙</button>
-  </nav>
 
+<body>
   <header>
     <h1>Neha S</h1>
-    <p id="typing-text"></p>
+    <p>VLSI Enthusiast | ECE @ Yenepoya Institute of Technology | Maven Silicon VLSI Trainee</p>
     <p>Bengaluru, Karnataka, India</p>
     <div class="contact">
       <p>Email: <a href="mailto:nehas04551@gmail.com">nehas04551@gmail.com</a></p>
@@ -243,89 +107,68 @@
     </div>
   </header>
 
-  <section id="about" data-aos="fade-up">
+  <section>
     <h2>About Me</h2>
-    <p>I’m a Bachelor of Engineering student in Electronics and Communication at Yenepoya Institute of Technology...</p>
+    <p>I’m a Bachelor of Engineering student in Electronics and Communication at Yenepoya Institute of Technology.
+      My interests revolve around VLSI design and embedded systems — where I enjoy solving real-world problems using core electronics.
+      I'm passionate about learning, building, and connecting with professionals in the field.
+    </p>
   </section>
 
-  <section id="education" data-aos="fade-up">
+  <section>
     <h2>Education</h2>
-    <p><strong>Yenepoya Institute of Technology</strong><br/>Bachelor of Engineering (B.E), Electronics & Communication<br/>Oct 2022 – Apr 2026</p>
+    <p><strong>Yenepoya Institute of Technology</strong><br />
+    Bachelor of Engineering (B.E), Electronics & Communication Engineering<br />
+    Oct 2022 – Apr 2026</p>
   </section>
 
-  <section id="skills" data-aos="fade-up">
+  <section>
     <h2>Skills</h2>
-    <div class="skill-bar">
-      <div class="bar-label">Embedded Systems</div>
-      <div class="bar-container"><div class="bar-fill" style="--fill: 90%">90%</div></div>
-    </div>
-    <!-- Add more skills here -->
+    <ul>
+      <li>Project Management</li>
+      <li>Alert System Development</li>
+      <li>Internet of Things (IoT)</li>
+      <li>Sensory Integration</li>
+      <li>Printed Circuit Board (PCB) Design</li>
+      <li>Embedded Systems</li>
+      <li>C (Programming Language)</li>
+    </ul>
   </section>
 
-  <section id="projects" data-aos="fade-up">
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>🏅 <strong>Postman API Fundamentals – Student Expert</strong><br>Certified by Postman</li>
+      <li>📊 <strong>Mastering Data with Machine Learning Internship</strong><br>Issued: Nov 2024<br>By CSRBOX & IBM SkillsBuild</li>
+      <li>🔧 <strong>Embedded Systems Internship</strong><br>Feb 1 – Apr 1, 2025<br>By Plasmid (MSME DFO)</li>
+      <li>🌐 <strong>Embedded System Design & IoT Internship</strong><br>Jan 4 – Apr 4, 2024<br>By Pantech.ai (Warriors Way)</li>
+      <li>📜 <strong>Spoken Tutorial – IIT Bombay</strong><br>• Python 3.4.3 (87.14%) – Jul 26, 2024<br>• Arduino (92.50%) – Feb 21, 2024</li>
+      <li>🏆 <strong>Software Development Course – Beginner to Advanced</strong><br>Jan 2025 | Score: 95%<br>By Brilliant Students Organization</li>
+    </ul>
+  </section>
+
+  <section>
     <h2>Projects</h2>
     <div class="project">
       <h3>1. Alert System Using IoT</h3>
-      <p>Real-time water quality monitoring using TDS sensors and BLYNK app.</p>
+      <p>Real-time water quality monitoring using TDS sensors and BLYNK app. Generates alerts when thresholds are crossed to ensure safe water delivery.</p>
+    </div>
+    <div class="project">
+      <h3>2. Smart Glucose Monitor</h3>
+      <p>Non-invasive glucose monitoring system using LED, photodiode, and Arduino. Includes a safety shutoff based on skin exposure time.</p>
+    </div>
+    <div class="project">
+      <h3>3. ATmega328P Trainer Kit</h3>
+      <p>Designed a hardware trainer kit using sensors, push buttons, LEDs, buzzers, and LCD for hands-on embedded system learning.</p>
     </div>
   </section>
 
-  <section id="resume" style="text-align: center;" data-aos="zoom-in">
-    <a class="resume-btn" href="NehaS_Resume_2025.pdf" download>⬇ Download My Resume</a>
+  <section style="text-align: center;">
+    <a class="resume-btn" href="NehaS_Resume.pdf" download>Download My Resume</a>
   </section>
-
-  <!-- Chat Feature -->
-  <div class="chat-float" onclick="toggleChatPopup()">💬 Chat with Me</div>
-
-  <div class="chat-popup" id="chatPopup">
-    <form onsubmit="sendMail(event)" class="chat-form">
-      <h3>Let's Talk</h3>
-      <input type="text" id="chatName" placeholder="Your Name" required />
-      <input type="email" id="chatEmail" placeholder="Your Email" required />
-      <textarea id="chatMessage" placeholder="Type your message..." rows="4" required></textarea>
-      <button type="submit">Send</button>
-      <button type="button" onclick="toggleChatPopup()" class="close-btn">Close</button>
-    </form>
-  </div>
 
   <footer>
     &copy; 2025 Neha S. All rights reserved.
   </footer>
-
-  <!-- Scripts -->
-  <script>
-    const text = "VLSI Enthusiast | Embedded Systems Developer | ECE @ YIT";
-    let i = 0;
-    function typingEffect() {
-      if (i < text.length) {
-        document.getElementById("typing-text").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typingEffect, 60);
-      }
-    }
-    typingEffect();
-
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      document.getElementById('theme-toggle').textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    });
-
-    function toggleChatPopup() {
-      const popup = document.getElementById('chatPopup');
-      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function sendMail(event) {
-      event.preventDefault();
-      const name = document.getElementById("chatName").value;
-      const email = document.getElementById("chatEmail").value;
-      const message = document.getElementById("chatMessage").value;
-
-      const mailtoLink = `mailto:nehas04551@gmail.com?subject=Message from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${name} (${email})`;
-      window.location.href = mailtoLink;
-    }
-  </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
 </body>
 </html>
