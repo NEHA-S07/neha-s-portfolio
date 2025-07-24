@@ -5,30 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neha S | Portfolio</title>
   <link rel="icon" type="image/png" href="favicon.png" />
-
-  <!-- AOS (Animate On Scroll) CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- Metadata -->
-  <meta property="og:title" content="Neha S | VLSI | Embedded Systems Portfolio" />
-  <meta property="og:description" content="Explore my work in VLSI, Embedded Systems, and Digital Design. ECE @ YIT | Maven Silicon VLSI Trainee." />
-  <meta property="og:url" content="https://neha-s07.github.io/neha-s-portfolio/" />
-  <meta name="twitter:card" content="summary" />
-
   <style>
+    :root {
+      --bg-color: #f4f6f8;
+      --text-color: #333;
+      --header-bg: #003366;
+      --header-text: #fff;
+      --section-bg: #ffffff;
+      --link-color: #aee1f9;
+      --accent: #4facfe;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #1e1e2f;
+      --header-text: #ffffff;
+      --section-bg: #1c1c28;
+      --link-color: #7fc7ff;
+      --accent: #5dade2;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f6f8;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* NAVBAR */
+    nav {
+      background-color: var(--header-bg);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: var(--header-text);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--header-text);
+      cursor: pointer;
     }
 
     header {
-      background-color: #003366;
-      color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem 1rem;
+      background-color: var(--header-bg);
+      color: var(--header-text);
     }
 
     header h1 {
@@ -39,12 +90,12 @@
     #typing-text {
       font-size: 1.2rem;
       font-style: italic;
-      margin-bottom: 1rem;
-      min-height: 1.5rem;
+      margin-bottom: 0.5rem;
+      min-height: 1.4rem;
     }
 
     .contact a {
-      color: #aee1f9;
+      color: var(--link-color);
       text-decoration: none;
     }
 
@@ -52,19 +103,17 @@
       padding: 2rem;
       max-width: 900px;
       margin: 2rem auto;
-      background: white;
+      background: var(--section-bg);
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     h2 {
-      color: #003366;
-      margin-bottom: 1rem;
+      color: var(--header-bg);
     }
 
     h3 {
-      color: #004080;
-      margin-top: 1.5rem;
+      color: var(--accent);
     }
 
     ul {
@@ -100,10 +149,6 @@
       100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
     }
 
-    .project {
-      margin-bottom: 1.5rem;
-    }
-
     .skill-bar {
       margin-bottom: 1rem;
     }
@@ -121,7 +166,7 @@
     }
 
     .bar-fill {
-      background-color: #4facfe;
+      background-color: var(--accent);
       height: 100%;
       text-align: right;
       padding-right: 8px;
@@ -146,6 +191,20 @@
 </head>
 
 <body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+    </div>
+    <button class="toggle-btn" id="theme-toggle" title="Toggle dark/light mode">🌙</button>
+  </nav>
+
+  <!-- HEADER -->
   <header>
     <h1>Neha S</h1>
     <p id="typing-text"></p>
@@ -156,7 +215,8 @@
     </div>
   </header>
 
-  <section data-aos="fade-up">
+  <!-- ABOUT -->
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>I’m a Bachelor of Engineering student in Electronics and Communication at Yenepoya Institute of Technology.
       My interests revolve around VLSI design and embedded systems — where I enjoy solving real-world problems using core electronics.
@@ -164,14 +224,16 @@
     </p>
   </section>
 
-  <section data-aos="fade-up">
+  <!-- EDUCATION -->
+  <section id="education" data-aos="fade-up">
     <h2>Education</h2>
     <p><strong>Yenepoya Institute of Technology</strong><br />
     Bachelor of Engineering (B.E), Electronics & Communication Engineering<br />
     Oct 2022 – Apr 2026</p>
   </section>
 
-  <section data-aos="fade-up">
+  <!-- SKILLS -->
+  <section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
     <div class="skill-bar">
       <div class="bar-label">Embedded Systems</div>
@@ -191,19 +253,8 @@
     </div>
   </section>
 
-  <section data-aos="fade-up">
-    <h2>Certifications</h2>
-    <ul>
-      <li><strong>Postman API Fundamentals – Student Expert</strong> – Postman</li>
-      <li><strong>Mastering Data with Machine Learning Internship</strong> – IBM SkillsBuild</li>
-      <li><strong>Embedded Systems Internship</strong> – Plasmid (MSME DFO)</li>
-      <li><strong>Embedded System Design & IoT Internship</strong> – Pantech.ai</li>
-      <li><strong>Spoken Tutorial – IIT Bombay</strong> – Python 3, Arduino</li>
-      <li><strong>Software Development Course</strong> – Brilliant Students Org</li>
-    </ul>
-  </section>
-
-  <section data-aos="fade-up">
+  <!-- PROJECTS -->
+  <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
     <div class="project">
       <h3>1. Alert System Using IoT</h3>
@@ -219,7 +270,8 @@
     </div>
   </section>
 
-  <section style="text-align: center;" data-aos="zoom-in">
+  <!-- RESUME -->
+  <section id="resume" style="text-align: center;" data-aos="zoom-in">
     <a class="resume-btn" href="NehaS_Resume_2025.pdf" download>⬇ Download My Resume</a>
   </section>
 
@@ -235,13 +287,22 @@
       if (i < text.length) {
         document.getElementById("typing-text").innerHTML += text.charAt(i);
         i++;
-        setTimeout(typingEffect, 70);
+        setTimeout(typingEffect, 60);
       }
     }
     typingEffect();
   </script>
 
-  <!-- AOS Script -->
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 </body>
