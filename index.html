@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neha S | Portfolio</title>
   <link rel="icon" type="image/png" href="favicon.png" />
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const icon = document.getElementById("theme-icon");
+      icon.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    }
+  </script>
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -18,7 +27,53 @@
       padding: 0;
     }
 
-    /* === Navbar === */
+    /* Dark Mode Styles */
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+    }
+
+    .dark-mode header,
+    .dark-mode nav {
+      background-color: #121212;
+    }
+
+    .dark-mode section {
+      background-color: #2a2a2a;
+      color: #f1f1f1;
+    }
+
+    .dark-mode a {
+      color: #f48c06;
+    }
+
+    .dark-mode .resume-btn {
+      background-color: #f48c06;
+      color: white;
+    }
+
+    .dark-mode .resume-btn:hover {
+      background-color: #e07a05;
+    }
+
+    .dark-mode footer {
+      color: #aaa;
+    }
+
+    /* Toggle Button */
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+      background: transparent;
+      border: none;
+      color: #ef8354;
+      transition: color 0.3s;
+    }
+
     nav {
       background-color: #2b2d42;
       color: white;
@@ -42,7 +97,6 @@
       color: #ffffff;
     }
 
-    /* === Header === */
     header {
       background-color: #2b2d42;
       color: white;
@@ -148,6 +202,11 @@
 </head>
 
 <body>
+  <!-- Dark Mode Toggle Button -->
+  <button class="theme-toggle" onclick="toggleDarkMode()">
+    <span id="theme-icon">🌙</span>
+  </button>
+
   <!-- Navbar -->
   <nav>
     <a href="#about">About</a>
