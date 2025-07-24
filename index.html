@@ -27,7 +27,7 @@
       padding: 0;
     }
 
-    /* Dark Mode Styles */
+    /* Dark Mode */
     .dark-mode {
       background-color: #1e1e1e;
       color: #f1f1f1;
@@ -60,14 +60,17 @@
       color: #aaa;
     }
 
-    /* Toggle Button */
+    .dark-mode h2,
+    .dark-mode h3 {
+      color: #f1f1f1;
+    }
+
     .theme-toggle {
-      position: fixed;
-      top: 10px;
-      right: 20px;
+      position: relative;
+      top: unset;
+      right: unset;
       font-size: 1.5rem;
       cursor: pointer;
-      z-index: 1001;
       background: transparent;
       border: none;
       color: #ef8354;
@@ -83,7 +86,9 @@
       z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -160,8 +165,30 @@
       background-color: #d76b3f;
     }
 
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
     .project {
-      margin-bottom: 1.5rem;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .dark-mode .project {
+      background-color: #2f2f2f;
+      border: 1px solid #444;
     }
 
     footer {
@@ -198,23 +225,66 @@
         transform: translateY(0);
       }
     }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      nav {
+        gap: 1rem;
+        padding: 0.5rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .resume-btn {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+      }
+
+      section {
+        padding: 1.2rem;
+        margin: 1rem 1rem;
+      }
+
+      img[alt="Profile Picture"] {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .theme-toggle {
+        margin-bottom: 0.5rem;
+      }
+
+      header p, .contact p {
+        font-size: 0.9rem;
+      }
+
+      .resume-btn {
+        width: 80%;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Dark Mode Toggle Button -->
-  <button class="theme-toggle" onclick="toggleDarkMode()">
-    <span id="theme-icon">🌙</span>
-  </button>
-
   <!-- Navbar -->
   <nav>
+    <button class="theme-toggle" onclick="toggleDarkMode()"><span id="theme-icon">🌙</span></button>
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <!-- Header -->
@@ -227,9 +297,7 @@
       <p>Email: <a href="mailto:nehas04551@gmail.com">nehas04551@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/neha-s-28551326a" target="_blank">linkedin.com/in/neha-s-28551326a</a></p>
     </div>
-    <a href="https://www.linkedin.com/in/neha-s-28551326a" target="_blank" class="resume-btn">
-      🔗 Connect on LinkedIn
-    </a>
+    <a href="NehaS_Resume.pdf" class="resume-btn" download>📄 Download My Resume</a>
   </header>
 
   <section id="about" class="fade-in">
@@ -237,13 +305,6 @@
     <p>I’m a Bachelor of Engineering student in Electronics and Communication at Yenepoya Institute of Technology.
       My interests revolve around VLSI design and embedded systems — where I enjoy solving real-world problems using core electronics.
       I'm passionate about learning, building, and connecting with professionals in the field.</p>
-  </section>
-
-  <section class="fade-in">
-    <h2>Summary</h2>
-    <p>As a BE student in Electronics and Communication Engineering, I'm passionate about exploring the world of core electronics.
-    My interests lie in VLSI design and embedded systems, where I enjoy applying theoretical concepts to real-world problems.
-    I'm excited to connect with professionals in the field and learn from their experiences.</p>
   </section>
 
   <section id="education" class="fade-in">
@@ -257,20 +318,16 @@
     <h2>Experience</h2>
     <div class="project">
       <h3>Embedded Systems Intern – Plasmid (MSME)</h3>
-      <p><em>February 2025 – April 2025</em></p>
+      <p><em>Feb 2025 – Apr 2025</em></p>
       <ul>
-        <li>Assisted in developing embedded training kits using ATmega328P with sensors, buzzers, and LCDs.</li>
-        <li>Supported firmware development and real-time testing for academic labs.</li>
-        <li>Contributed to modular design for enhanced learning.</li>
+        <li>Assisted in developing embedded kits using ATmega328P, sensors, buzzers, and LCDs.</li>
       </ul>
     </div>
     <div class="project">
       <h3>Embedded IoT Intern – Pantech.AI</h3>
-      <p><em>January 2024 – April 2024</em></p>
+      <p><em>Jan 2024 – Apr 2024</em></p>
       <ul>
-        <li>Built IoT applications using Arduino and Blynk for real-time sensor data.</li>
-        <li>Modularized firmware for simplified integration and alerts.</li>
-        <li>Implemented cloud-based dashboards for device control and notifications.</li>
+        <li>Built IoT apps using Arduino and Blynk with cloud alerts and dashboards.</li>
       </ul>
     </div>
   </section>
@@ -278,34 +335,50 @@
   <section id="skills" class="fade-in">
     <h2>Skills</h2>
     <ul>
-      <li>Project Management</li>
-      <li>Alert System Development</li>
-      <li>Internet of Things (IoT)</li>
-      <li>Sensory Integration</li>
-      <li>Printed Circuit Board (PCB) Design</li>
       <li>Embedded Systems</li>
-      <li>C (Programming Language)</li>
+      <li>IoT</li>
+      <li>PCB Design</li>
+      <li>C Programming</li>
+      <li>Arduino, Blynk, Sensors</li>
     </ul>
   </section>
 
   <section id="projects" class="fade-in">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>1. Alert System Using IoT</h3>
-      <p>Real-time water quality monitoring using TDS sensors and BLYNK app. Generates alerts when thresholds are crossed to ensure safe water delivery.</p>
-    </div>
-    <div class="project">
-      <h3>2. Smart Glucose Monitor</h3>
-      <p>Non-invasive glucose monitoring system using LED, photodiode, and Arduino. Includes a safety shutoff based on skin exposure time.</p>
-    </div>
-    <div class="project">
-      <h3>3. ATmega328P Trainer Kit</h3>
-      <p>Designed a hardware trainer kit using sensors, push buttons, LEDs, buzzers, and LCD for hands-on embedded system learning.</p>
+    <div class="project-grid">
+      <div class="project">
+        <h3>1. Alert System Using IoT</h3>
+        <p>Monitors water quality in real time using TDS sensors + Blynk, with alerts.</p>
+      </div>
+      <div class="project">
+        <h3>2. Smart Glucose Monitor</h3>
+        <p>Non-invasive system using LED and photodiode + safety cutoff.</p>
+      </div>
+      <div class="project">
+        <h3>3. ATmega328P Trainer Kit</h3>
+        <p>Custom embedded kit with sensors, buttons, LCD, and learning modules.</p>
+      </div>
     </div>
   </section>
 
   <section id="resume" class="fade-in" style="text-align: center;">
     <a class="resume-btn" href="NehaS_Resume.pdf" download>📄 Download My Resume</a>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/meozayqr" method="POST" style="max-width: 600px; margin: auto;">
+      <label for="name">Name</label><br>
+      <input type="text" name="name" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"><br>
+
+      <label for="email">Email</label><br>
+      <input type="email" name="_replyto" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"><br>
+
+      <label for="message">Message</label><br>
+      <textarea name="message" rows="5" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea><br>
+
+      <button type="submit" class="resume-btn">Send Message</button>
+    </form>
   </section>
 
   <footer>
